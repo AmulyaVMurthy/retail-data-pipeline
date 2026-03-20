@@ -18,11 +18,11 @@ I built a professional-grade data pipeline that automates the transformation of 
 ## 📊 Analytics Gallery
 
 
-**Logistics & Ops Optimizer** | ![Logistics & Ops Optimizer][(images/Logistics & Operations Optimizer.png)]
+**Logistics & Ops Optimizer** | ![Logistics](images/Logistics%20&%20Operations%20Optimizer.png)
 
-**Marketing & Loyalty** | ![Marketing & Loyalty][(images/Marketing & Loyalty.png)]
+**Marketing & Loyalty** | ![Marketing](images/Marketing%20&%20Loyalty.png)
 
-**Executive Overview** | ![Executive Overview][(images/Strategic Sales & Growth Analytics_ Olist Case Study.png)]
+**Executive Overview** | ![Executive](images/Strategic%20Sales%20&%20Growth%20Analytics_%20Olist%20Case%20Study.png)
 
 
 ---
