@@ -1,36 +1,64 @@
 import pandas as pd
+import logging
+import os
+
+# Set up professional logging
+logging.basicConfig(
+    level=logging.INFO, 
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 class DataCleaner:
+    """
+    A professional data cleaning pipeline for E-commerce retail data.
+    Handles datetime conversion, null values, and statistical outlier removal.
+    """
     def __init__(self, filepath):
-        """Phase 3.1: Load the dataset upon initialization"""
+        if not os.path.exists(filepath):
+            logging.error(f"File not found: {filepath}")
+            raise FileNotFoundError(f"Check your data folder for {filepath}")
+            
         self.df = pd.read_csv(filepath)
-        print(f"--- DataCleaner initialized with {len(self.df)} rows ---")
+        logging.info(f"--- DataCleaner initialized: {len(self.df)} rows loaded ---")
 
     def format_dates(self, column_name):
-        """Phase 3.2: Convert strings to actual datetime objects"""
-        self.df[column_name] = pd.to_datetime(self.df[column_name])
-        print(f"✅ Formatted {column_name} to datetime.")
+        """Converts strings to datetime objects with error handling."""
+        try:
+            self.df[column_name] = pd.to_datetime(self.df[column_name])
+            logging.info(f"✅ Formatted {column_name} to datetime.")
+        except Exception as e:
+            logging.warning(f"❌ Failed to format {column_name}: {e}")
 
-    def handle_nulls(self):
-        """Phase 3.3: Drop rows where critical data is missing"""
+    def handle_nulls(self, columns_to_check):
+        """Drops rows where critical business data is missing."""
         initial_count = len(self.df)
-        # Drop rows where we don't have a customer ID or revenue
-        self.df.dropna(subset=['customer_unique_id', 'total_order_revenue'], inplace=True)
-        print(f"✅ Dropped {initial_count - len(self.df)} null rows.")
+        self.df.dropna(subset=columns_to_check, inplace=True)
+        logging.info(f"✅ Dropped {initial_count - len(self.df)} null rows based on {columns_to_check}.")
 
-    def remove_outliers(self, column):
-        """Phase 3.4: Use IQR method to remove extreme price anomalies"""
+    def remove_outliers(self, column, factor=3):
+        """
+        Uses the IQR method to remove anomalies. 
+        Professional Tip: Use a factor of 3 (Extreme Outliers) for revenue 
+        to avoid deleting your best customers!
+        """
         Q1 = self.df[column].quantile(0.25)
         Q3 = self.df[column].quantile(0.75)
         IQR = Q3 - Q1
-        lower_bound = Q1 - 1.5 * IQR
-        upper_bound = Q3 + 1.5 * IQR
+        
+        upper_bound = Q3 + (factor * IQR)
+        lower_bound = Q1 - (factor * IQR)
         
         initial_count = len(self.df)
+        # We usually only care about the upper bound for 'revenue' 
+        # unless there are negative values (returns)
         self.df = self.df[(self.df[column] >= lower_bound) & (self.df[column] <= upper_bound)]
-        print(f"✅ Removed {initial_count - len(self.df)} outliers in {column}.")
+        
+        logging.info(f"✅ Removed {initial_count - len(self.df)} outliers in {column} (Factor: {factor}).")
 
     def save_data(self, output_path):
-        """Export the clean data"""
-        self.df.to_csv(output_path, index=False)
-        print(f"💾 Cleaned data saved to {output_path}")
+        """Exports the clean data for Tableau visualization."""
+        try:
+            self.df.to_csv(output_path, index=False)
+            logging.info(f"💾 Cleaned data saved to: {output_path}")
+        except Exception as e:
+            logging.error(f"❌ Error saving file: {e}")
