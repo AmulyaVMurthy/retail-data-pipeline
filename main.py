@@ -59,7 +59,7 @@ cleaner = DataCleaner('data/ecommerce_master.csv')
 
 # 2. Run the cleaning steps
 cleaner.format_dates('order_purchase_timestamp')
-cleaner.handle_nulls()
+cleaner.handle_nulls(['customer_unique_id', 'total_order_revenue']) 
 cleaner.remove_outliers('total_order_revenue')
 
 # 3. Save the final version for Tableau
