@@ -1,6 +1,6 @@
 # 🛒 Clean-Extract-Visualize: Retail Data Pipeline & Analytics Suite
 
-### 🔗 [View Interactive Suite on Tableau Public][(https://public.tableau.com/app/profile/amulya.v.murthy)]
+### 🔗 [View Interactive Suite on Tableau Public](https://public.tableau.com/app/profile/amulya.v.murthy)
 
 ## 📌 The Problem
 Raw e-commerce data is often fragmented across multiple tables and filled with anomalies. Executives need a high-level view of revenue, but Operations and Marketing teams need granular, actionable insights into shipping friction and customer behavior.
