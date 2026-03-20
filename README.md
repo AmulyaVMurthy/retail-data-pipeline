@@ -19,7 +19,7 @@ I built a professional-grade data pipeline that automates the transformation of 
 
 | Dashboard | Preview | Focus Area |
 | :--- | :--- | :--- |
-| **Logistics & Ops Optimizer** | ![Logistics](images/Logistics & Operations Optimizer.png) | **Efficiency:** Regional scaling, shipping friction, and warehouse staffing heatmaps. |
+| **Logistics & Ops Optimizer** | images/Logistics & Operations Optimizer.png | **Efficiency:** Regional scaling, shipping friction, and warehouse staffing heatmaps. |
 | **Marketing & Loyalty** | ![Marketing](images/Marketing & Loyalty.png) | **Growth:** Customer segmentation (VIP vs. Occasional), spend distribution, and AOV. |
 | **Executive Overview** | ![Executive](images/Strategic Sales & Growth Analytics_ Olist Case Study.png) | **Macro:** Monthly revenue trends and high-level geographic performance. |
 
