@@ -1,6 +1,6 @@
 # 🛒 Clean-Extract-Visualize: Retail Data Pipeline & Analytics Suite
 
-### 🔗 [View Interactive Suite on Tableau Public](https://public.tableau.com/app/profile/amulya.v.murthy/vizzes)
+### 🔗 [View Interactive Suite on Tableau Public][(https://public.tableau.com/app/profile/amulya.v.murthy/vizzes](https://public.tableau.com/app/profile/amulya.v.murthy))
 
 ## 📌 The Problem
 Raw e-commerce data is often fragmented across multiple tables and filled with anomalies. Executives need a high-level view of revenue, but Operations and Marketing teams need granular, actionable insights into shipping friction and customer behavior.
@@ -18,13 +18,11 @@ I built a professional-grade data pipeline that automates the transformation of 
 ## 📊 Analytics Gallery
 
 
-**Logistics & Ops Optimizer** | [Logistics](images/Logistics & Operations Optimizer.png) 
+**Logistics & Ops Optimizer** | ![Logistics & Ops Optimizer](images/Logistics & Operations Optimizer.png)
 
+**Marketing & Loyalty** | ![Marketing & Loyalty](images/Marketing & Loyalty.png)
 
-**Marketing & Loyalty** | [Marketing](images/Marketing & Loyalty.png) 
-
-
-**Executive Overview** | [Executive](images/Strategic Sales & Growth Analytics_ Olist Case Study.png) 
+**Executive Overview** | ![Executive Overview](images/Strategic Sales & Growth Analytics_ Olist Case Study.png)
 
 
 ---
